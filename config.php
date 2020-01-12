@@ -10,6 +10,16 @@ if ($dbconnect->connect_error) {
 die('Database Not Connect. Error : ' . $dbconnect->connect_error);
         }
 
+function query($query){
+  global $dbconnect;
+  $result = mysqli_query($dbconnect, $query);
+  $rows = [];
+  while($row = mysqli_fetch_assoc($result)){
+    $rows [] = $row;
+  }
+  return $rows;
+}
+
 function registrasi($data) {
 		global $dbconnect;
 
@@ -64,7 +74,7 @@ function registrasi($data) {
 		$namaFileBaru = uniqid();
 		$namaFileBaru .= '.';
 		$namaFileBaru .= $ekstensigambar;
-		$dirUpload = "gmb/";
+		$dirUpload = "../gmb/";
 
 		move_uploaded_file($tmpname, $dirUpload. $namaFileBaru);
 
