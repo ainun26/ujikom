@@ -1,6 +1,6 @@
 <?php 
-include 'index.php';
-include 'config.php';
+include '../admin/admin.php';
+include '../config.php';
 $dbconnect = mysqli_connect('localhost','root','','kasirrestoran');
 
 
@@ -63,22 +63,20 @@ function upload() {
 		return $namaFileBaru;
 	}
 
-//	if (isset($_POST['submit'])){
-//		$gambar = $_POST['gambar'];
-//		$nama_masakan = $_POST['nama_masakan'];
-//		$harga = $_POST['harga'];
-//		$status_masakan = $_POST['status_masakan'];
-
-//		$insert ="INSERT into masakan (gambar,nama_masakan,harga,status_masakan) values ('$gambar','$nama_masakan','$harga','$status_masakan')";
-//		mysqli_query($dbconnect,$insert);
-
-//		if (mysqli_affected_rows($dbconnect) >0 )
-//			echo "
-//				<script>
-//					alert('Data berhasil ditambahkan !!!');
-//					document.location.href = 'entrireferensi.php'
-//					</script>";
-//	}
+	if (isset($_POST['submit'])){
+		$gambar = $_POST['gambar'];
+		$nama_masakan = $_POST['nama_masakan'];
+		$harga = $_POST['harga'];
+		$status_masakan = $_POST['status_masakan'];
+		$insert ="INSERT into masakan (gambar,nama_masakan,harga,status_masakan) values ('$gambar','$nama_masakan','$harga','$status_masakan')";
+		mysqli_query($dbconnect,$insert);
+		if (mysqli_affected_rows($dbconnect) >0 )
+			echo "
+				<script>
+					alert('Data berhasil ditambahkan !!!');
+					document.location.href = '../admin/entrireferensi.php'
+					</script>";
+	}
 
 
  ?>
@@ -110,5 +108,5 @@ function upload() {
 
  <!-- ini akhir pencapaian -->
  <?php 
-require "footer.php";
+require "../footer.php";
   ?>

@@ -1,19 +1,19 @@
 <?php 
 include "customer.php";
-include "config.php";
+include "../config.php";
 $result = mysqli_query($dbconnect,"SELECT * FROM masakan");
  ?>
 
-<h2 style="text-align: center; margin-top: 10px; margin-bottom: 20px;">List Masakan</h2>
+<h2 style="text-align: center; margin-top: 10px; margin-bottom: 20px; color: deepskyblue">Menu Masakan dan Minuman</h2>
  <hr>
- <br></br>
+ <br>
 
  <div class="container">
  	<div class="row">
  		<?php while ($data = mysqli_fetch_assoc($result)) : ?>
  			<div class="col-lg-3 text-center">
- 				<div class="" style="margin-bottom: 20px;">
- 				<img src="gmb/<?= $data["gambar"]; ?>" style="border: 2px solid grey; border-radius: 5px; width: 250px; height: 200px;"><br>
+ 				<div class="" style="margin-bottom: 25px;">
+ 				<img src="../gmb/<?= $data["gambar"]; ?>" style="border: 2px solid #568EA6 ; border-radius: 5px; width: 250px; height: 200px;"><br>
  				<h6 style="color: deepskyblue; "><?= $data["nama_masakan"]; ?></h6>
  				<h6>Harga : <?=$data["harga"]; ?></h6>
  				<h6>Status : <?=$data["status_masakan"]; ?></h6>
@@ -27,5 +27,5 @@ $result = mysqli_query($dbconnect,"SELECT * FROM masakan");
  </div>
  <!-- ini akhir berita -->
 
- <?php include "footer.php";
+ <?php include "../footer.php";
  ?>

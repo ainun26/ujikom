@@ -1,5 +1,6 @@
 <?php 
-	include 'config.php';
+	include '../admin/admin.php';
+	include '../config.php';
 	$result = mysqli_query($dbconnect, "SELECT * FROM level");
 
 	if (isset($_POST["register"])) {
@@ -7,7 +8,7 @@
 		if (registrasi($_POST) > 0) {
 			echo "<script>
 					alert('User baru berhasil ditambahkan >_<');
-					document.location.href = 'user.php';
+					document.location.href = '../admin/user.php';
 				</script>";
 		}else{
 			echo mysqli_error($config);
@@ -47,3 +48,7 @@
  	</form>
  </body>
  </html>
+
+ <?php 
+include '../footer.php';
+  ?>

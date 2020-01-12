@@ -1,5 +1,6 @@
 <?php 
-include ('config.php');
+include ('../admin/admin.php');
+include ('../config.php');
 $id_user=$_GET['id_user'];
 
 $edit=mysqli_query($dbconnect,"select * from user where id_user='$id_user'");
@@ -65,16 +66,18 @@ if (isset($_POST['ubah'])) {
 		echo "
     	<script>
     	   alert('Data Berhasil di Edit :)');
-    	   document.location.href = 'user.php'
+    	   document.location.href = '../admin/user.php'
     	</script>
     	";
 	}else{
 		echo "
     	<script>
     	   alert('Data Gagal di Edit !!!');
-    	   document.location.href = 'user.php'
+    	   document.location.href = '../admin/user.php'
     	</script>
     	";
 	}
 }
   ?>
+
+  <?php include '../footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php 
-include "index.php";
-include "config.php";
+include "admin.php";
+include "../config.php";
 $result = mysqli_query($dbconnect,"SELECT * FROM level ORDER BY id_level DESC");
 ?>
         <!-- DataTables Example -->
@@ -33,4 +33,4 @@ $result = mysqli_query($dbconnect,"SELECT * FROM level ORDER BY id_level DESC");
 
       </div>
       <!-- /.container-fluid -->
-<?php include "footer.php"; ?>
+<?php include "../footer.php"; ?>

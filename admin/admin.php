@@ -13,13 +13,13 @@
    <link rel="shortcut icon" type="image/png" href="#">
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="../css/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -53,7 +53,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+          <a class="dropdown-item" href="../logout.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
         </div>
       </li>
     </ul>
@@ -65,20 +65,32 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
       </li>
+      <!-- User -->
+      <li class="nav-item">
+        <a class="nav-link" href="user.php">
+          <i class="fas fa-fw fa-users"></i>
+          <span>User</span></a>
+      </li>
+      <!-- Level -->
+      <li class="nav-item">
+        <a class="nav-link" href="level.php">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Level</span></a>
+      </li>
       <!-- Entri Referensi -->
       <li class="nav-item">
-        <a class="nav-link" href="menu.php">
+        <a class="nav-link" href="entrireferensi.php">
           <i class="fa fa-map"></i>
           <span>Entri Referensi</span></a>
       </li>
       <!-- Order -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="entriorder.php">
           <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Entri Order</span></a>
       </li>
@@ -90,6 +102,12 @@
           <span>Entri Transaksi</span></a>
       </li>
 
+      <!-- Laporan -->
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Generate Laporan</span></a>
+      </li>
     </ul>
 
     <div id="content-wrapper">
